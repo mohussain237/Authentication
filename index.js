@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const authRoute = require("./routes/Auth");
+const postRoute = require("./routes/Posts");
 dotenv.config();
 
 //connection to DB
@@ -13,10 +15,11 @@ console.log("DATA_BASE Connection is Successful....")
 app.use(express.json());
 
 // Routers import
-const authRoute = require("./routes/Auth");
+
 
 // Route MiddleWare....
 app.use("/api/user", authRoute);
+app.use("/api/posts", postRoute)
 
 const PORT = process.env.PORT || 5000;
 
