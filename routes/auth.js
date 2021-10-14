@@ -57,13 +57,12 @@ router.post("/login", (req, res) => {
 
 
     // create and assign a token
-    const token = 
+    const token = await jwt.sign({_id:userdata._id}, process.env.SECRETE_KEY)
+    res.header('Auth_token', token)
 
-  try {
+
     res.send("succesfully loged in");
-  } catch (error) {
-    res.send({ massage: error.massage });
-  }
+  
 });
 
 module.exports = router;
