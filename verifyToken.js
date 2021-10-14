@@ -6,6 +6,7 @@
      try {
          const verified = jwt.verify(token, process.env.SECRETE_KEY)
          req.userdata = verified
+         next()
      } catch (error) {
         res.status(400).send('invalid token')
      }
