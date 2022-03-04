@@ -5,6 +5,6 @@ creating Registration and login post routes, which is validated by @hapi/joi lib
 npm start
 
 # ******* For Testing the Code :
- Use POSTMAN application, for the authentication by passing headers tokens
+ Use POSTMAN application for the authentication by passing headers tokens
 
  
